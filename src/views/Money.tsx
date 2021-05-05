@@ -1,11 +1,38 @@
 import Layout from '../components/Layout';
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { TagsSection } from './Money/TagsSection';
+import { CategorySection } from './Money/CategorySection';
+import { NoteSection } from './Money/NoteSection';
+import { NumberPadSection } from './Money/NumberPadSection';
+
+const MyLayout = styled(Layout)`
+  display:flex;
+  flex-direction: column;
+`;
+
+type Category = '-' | '+'
 
 function Money() {
+  const [selected, setSelected] = useState({
+    tags: [] as string[],
+    note: '',
+    category: '-' as Category,
+    amount: 0
+  });
+  const onChange = (obj: Partial<typeof selected>) => {
+    setSelected({ ...selected, ...obj });
+  };
   return (
-    <Layout>
-      <h2>记账页面</h2>
-    </Layout>
+    <MyLayout>
+      <TagsSection />
+      <NoteSection />
+      <CategorySection />
+      <NumberPadSection value={selected.amount}
+        onChange={amount => onChange({ amount })}
+        onOk={() => { }}
+      />
+    </MyLayout>
   );
 }
 
