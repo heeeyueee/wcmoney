@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import React, { useState } from 'react';
+import React from 'react';
 const Wrapper = styled.section`
 background: #f5f5f5;
   padding: 0 16px;
@@ -16,16 +16,18 @@ background: #f5f5f5;
       border: none;
     }
   }`;
-
-const NoteSection: React.FunctionComponent = () => {
-  const [note, setNote] = useState('')
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+}
+const NoteSection: React.FunctionComponent<Props> = (props) => {
   return (
     <Wrapper>
       <label>
         <span>备注</span>
         <input type="text"
-          value={note}
-          onChange={(e) => { setNote(e.target.value) }} />
+          value={props.value}
+          onChange={(e) => { props.onChange(e.target.value) }} />
       </label>
     </Wrapper>
   )
