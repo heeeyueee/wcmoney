@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/tags/:tag">
+        <Route exact path="/tags/:id">
           <Tag />
         </Route>
         <Route exact path="/tags">
