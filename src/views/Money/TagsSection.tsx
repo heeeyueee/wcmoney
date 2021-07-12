@@ -48,11 +48,7 @@ const TagsSection: React.FunctionComponent<Props> = (props) => {
                     <li key={tag.id} onClick={() => { onToggleTag(tag.id); }} className={getClass(tag.id)}>{tag.name}</li>
                 )}
             </ol>
-            <button onClick={() => {
-                console.log('2');
-                addTag();
-            }}>新增标签2
-            </button>
+            <button onClick={addTag}>新增标签</button>
         </Wrapper>
     )
 }
