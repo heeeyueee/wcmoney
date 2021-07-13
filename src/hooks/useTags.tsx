@@ -20,7 +20,7 @@ const useTags = () => {
     }, []); // 组件挂载时执行
     useUpdate(() => {
         window.localStorage.setItem('tags', JSON.stringify(tags));
-    }, [tags]);
+    }, tags);
     const findTag = (id: number) => tags.filter(tag => tag.id === id)[0]
     const findTagIndex = (id: number) => {
         let result = -1
@@ -29,8 +29,8 @@ const useTags = () => {
                 result = index
                 break
             }
-            return result
         }
+        return result
     }
     const editTagContent = (id: number, obj: { name: string }) => {
         const index = findTagIndex(id)
@@ -52,7 +52,12 @@ const useTags = () => {
             setTags([...tags, { id: createId(), name: tagName }]);
         }
     };
-    return { tags, setTags, findTag, findTagIndex, editTagContent, deleteTag, addTag };
+    const getName = (id: number) => {
+        const tag = tags.filter(t => t.id === id)[0]
+        return tag ? tag.name : ""
+
+    }
+    return { tags, setTags, findTag, findTagIndex, editTagContent, deleteTag, addTag, getName };
 };
 
 export { useTags };

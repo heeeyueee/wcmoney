@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+ border:solid 3px pink;
   height: 100vh;
   display:flex;
   flex-direction: column;
@@ -17,7 +18,7 @@ const Layout = (props: any) => {
       <Main>
         {props.children}
       </Main>
-      <Nav/>
+      <Nav />
     </Wrapper>
   );
 };

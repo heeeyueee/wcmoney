@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
+border:solid 1px blue;
   display:flex;
   flex-direction: column;
   > .output{
@@ -45,6 +46,15 @@ const Wrapper = styled.section`
       &:nth-child(14) {
         background:#A9A9A9;
       }
+    }
+
+    @media (max-height:570px){
+      > button{
+        height: 40px;
+        &.ok{
+          height: 80px;
+        }
+      } 
     }
   }
 `;
