@@ -1,6 +1,7 @@
 {
-  "name": "money-react",
+  "name": "easy-money",
   "version": "0.1.0",
+  "homepage": "http://front.igotcha.top/easy-money/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",

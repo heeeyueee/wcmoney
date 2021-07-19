@@ -25,7 +25,7 @@ const MonthMoney = styled.div`
    position: absolute;    
    top:1.1em;    
    height: calc(100% - 2.2em);    
-   left:-27px;    
+   left:-2.5em;    
    content: '';    
    width:0;    
    border-left: solid  #b7bdcd 1px;

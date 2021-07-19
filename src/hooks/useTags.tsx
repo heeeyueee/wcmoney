@@ -49,11 +49,11 @@ const useTags = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await getTags();
-      console.log(result);
+      //console.log(result);
       setTags(result || '[]');
     }
     fetchData();
-    console.log('执行了get')
+    //console.log('执行了get')
   }, []);
 
 
@@ -85,11 +85,11 @@ const useTags = () => {
   const deleteTag = (id: number) => {
     //setTags(tags.filter(tag => tag.id !== id))
     // window.location.reload()
-    console.log('删除了');
+    //console.log('删除了');
 
     deleteTags(id).then(() => {
 
-      console.log('执行了get')
+      //console.log('执行了get')
     })
   }
 
@@ -100,10 +100,10 @@ const useTags = () => {
 
       addTags({ id: createId(), name, iconName, mold })
         .then(res => {
-          console.log('res=>', res.data);
+          //console.log('res=>', res.data);
         })
-      console.log(JSON.stringify({ id: createId(), name, iconName, mold }))
-      console.log('执行了update')
+      //console.log(JSON.stringify({ id: createId(), name, iconName, mold }))
+      //console.log('执行了update')
 
       //window.location.reload()
     }

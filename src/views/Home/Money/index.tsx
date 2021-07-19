@@ -5,6 +5,7 @@ import TopNav from 'components/TopNav';
 import { Wrapper } from 'components/Wrapper';
 
 
+
 import { TagsSection } from './section/TagsSection';
 import { KeyboardSection } from './section/KeyboardSection';
 import { useRecords } from 'hooks/useRecords';
@@ -42,7 +43,7 @@ const Money: React.FC = () => {
   const onSubmit = () => {
     addRecord(selected);
     window.alert('保存成功');
-    window.location.reload();
+    // window.location.reload();
 
   };
 

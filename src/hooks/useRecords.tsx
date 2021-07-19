@@ -20,7 +20,7 @@ const useRecords = () => {
       setRecords(result || '[]');
     }
     fetchData();
-    console.log('执行了get')
+    //console.log('执行了get')
   }, []);
   // useEffect(() => {
   //   setRecords(JSON.parse(window.localStorage.getItem('records') || '[]'));
@@ -44,11 +44,11 @@ const useRecords = () => {
     //setRecords([...records, newRecord]);
     addRecords(newRecord)
       .then(res => {
-        console.log('res=>', res.data);
+        // console.log('res=>', res.data);
       })
-    console.log(JSON.stringify(newRecord))
-    console.log('执行了update')
-    return true;
+    //console.log(JSON.stringify(newRecord))
+    //console.log('执行了update')
+
   };
 
   // 获取 收入的标签
