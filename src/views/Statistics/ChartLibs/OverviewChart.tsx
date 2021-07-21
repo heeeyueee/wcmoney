@@ -1,6 +1,6 @@
 import React from 'react';
 import { WrapperChart } from 'components/WrapperChart';
-import Icon from 'components/Icon';
+
 import day from 'dayjs';
 import _ from 'lodash';
 import { useRecords } from 'hooks/useRecords';
@@ -11,7 +11,7 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/grid'
 import ReactEcharts from 'echarts-for-react';
-import { ShowMoney } from 'components/ShowMnoey';
+
 
 const OverviewChart = () => {
   const { dayTotalList } = useRecords();

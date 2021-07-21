@@ -54,33 +54,33 @@ const IconList = styled.section`
     }
   }
 `;
-const Button = styled.section`
- padding-top: 20px;
- display: flex;
- justify-content: center;
- align-items: center;
- margin-bottom: 10px;
- > button{
-    outline: none;
-    font-size: 14px;
-    border-radius: 4px;
-    padding: 10px 24px;
-    margin: 0 24px;
-    &.save{
-      border: 1px solid #9CCAC0;
-      background-color:#fff;
-    }
-    &.delete{
-      border: 1px solid #FFFFFF;
-      background-color:#9CCAC0;
-      color: red;
-    }
-    .selected{
-      background-color:#9CCAC0;
-      color: #fff;
-    }
- }
-`;
+// const Button = styled.section`
+//  padding-top: 20px;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  margin-bottom: 10px;
+//  > button{
+//     outline: none;
+//     font-size: 14px;
+//     border-radius: 4px;
+//     padding: 10px 24px;
+//     margin: 0 24px;
+//     &.save{
+//       border: 1px solid #9CCAC0;
+//       background-color:#fff;
+//     }
+//     &.delete{
+//       border: 1px solid #FFFFFF;
+//       background-color:#9CCAC0;
+//       color: red;
+//     }
+//     .selected{
+//       background-color:#9CCAC0;
+//       color: #fff;
+//     }
+//  }
+// `;
 const Span = styled.section`
 padding: 10px 0px;
  display: flex;

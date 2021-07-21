@@ -5,6 +5,7 @@ export function request(option) {
         // 1.创建axios的实例
         const instance = originAxios.create({
             baseURL: 'http://39.96.56.146:9000/',
+            //baseURL: 'http://localhost:9000/',
             timeout: 10000
         });
 
@@ -58,6 +59,7 @@ export function request(option) {
 // post请求
 export const postRequest = (url, params) => {
     return originAxios.post(`http://39.96.56.146:9000${url}`, params)
+    //return originAxios.post(`http://localhost:9000${url}`, params)
 };
 // delete请求
 export const deleteRequest = (url, params) => {

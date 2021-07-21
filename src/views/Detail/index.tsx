@@ -1,5 +1,5 @@
 import Layout from 'components/Layout';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { RecordItem, useRecords } from 'hooks/useRecords';
 import useTags from 'hooks/useTags';
 

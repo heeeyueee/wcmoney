@@ -1,8 +1,9 @@
 import React from 'react';
 import Layout from 'components/Layout';
 import { MoneyLink } from 'components/MoneyLink/MoneyLink';
-import { ShowMoney } from 'components/ShowMnoey';
-import { useRecords, RecordItem } from 'hooks/useRecords';
+
+import { useRecords } from 'hooks/useRecords';
+import AuthService from "../../services/auth.service";
 import day from 'dayjs';
 import styled from 'styled-components';
 import Icon from 'components/Icon';
@@ -21,7 +22,7 @@ const MonthMoney = styled.div`
  .first{
   position: relative;
  }
- .first:after{    
+ /* .first:after{    
    position: absolute;    
    top:1.1em;    
    height: calc(100% - 2.2em);    
@@ -29,7 +30,7 @@ const MonthMoney = styled.div`
    content: '';    
    width:0;    
    border-left: solid  #b7bdcd 1px;
-}
+} */
  .title{
    font-size: 16px;
    color: #b7bdcd;
@@ -59,6 +60,27 @@ const Record = styled.div`
 
 `
   ;
+const Button = styled.button`
+border:none;
+position: absolute;
+top:60%;
+left:50%;
+transform: translate(-50%, 0);
+padding: 10px;
+border:2px solid #ffda44;
+border-radius: 6px;
+background: #fff;
+font-size: 14px;
+
+`;
+const Head = styled.h5`
+position: absolute;
+top:50%;
+left:50%;
+font-size: 16px;
+transform: translate(-50%, 0);
+`
+  ;
 const Home: React.FC = () => {
 
   const { incomeMoney, expensesMonthMoney } = useRecords();
@@ -67,7 +89,10 @@ const Home: React.FC = () => {
   const expenses = expensesMonthMoney(mouth);
   const income = incomeMoney(mouth);
   let { url } = useRouteMatch();
-
+  const logOut = () => {
+    AuthService.logout();
+  };
+  const username = JSON.parse(window.localStorage.getItem('user') || '[]').username
   return (
     <Layout name="记账">
       <MonthMoney>
@@ -91,7 +116,14 @@ const Home: React.FC = () => {
 
       </Record>
       <MoneyLink />
-    </Layout>
+      {/* <li className="nav-item"> */}
+      <Head>{username}快来记一笔吧！</Head>
+      <Link to='/auth' onClick={logOut}> <Button>退出登录</Button></Link>
+      {/* <a href="login" className="nav-link" onClick={logOut}>
+        LogOut
+        </a>
+      </li> */}
+    </Layout >
   );
 };
 

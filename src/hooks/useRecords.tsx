@@ -14,14 +14,15 @@ export type RecordItem = {
 
 const useRecords = () => {
   const [records, setRecords] = useState<RecordItem[]>([]);
+  const userId = JSON.parse(window.localStorage.getItem('user') || '[]').id
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getRecords();
+      const result = await getRecords(userId);
       setRecords(result || '[]');
     }
     fetchData();
     //console.log('执行了get')
-  }, []);
+  }, [userId]);
   // useEffect(() => {
   //   setRecords(JSON.parse(window.localStorage.getItem('records') || '[]'));
   // }, []);
@@ -32,20 +33,36 @@ const useRecords = () => {
 
   // 添加
   const addRecord = (newRecord: RecordItem) => {
-    if (newRecord.tagIds.length === 0) {
-      alert('请输入标签！');
-      return false;
+    const record = { ...newRecord, userId: userId };
+    let flag
+    if (userId.length === 0) {
+      flag = false;
+      alert('请登录');
+
     }
-    if (newRecord.amount <= 0) {
+    if (record.tagIds.length === 0) {
+      flag = false;
+      alert('请输入标签！');
+
+    }
+    if (record.amount <= 0) {
+      flag = false;
       alert('请输入金额！');
-      return false;
+
     }
     // const record = {...newRecord, createdAt: (new Date()).toISOString()};
     //setRecords([...records, newRecord]);
-    addRecords(newRecord)
-      .then(res => {
-        // console.log('res=>', res.data);
-      })
+
+
+    if (flag !== false) {
+      addRecords(record)
+        .then(res => {
+          // console.log('res=>', res.data);
+        })
+      window.alert('保存成功');
+
+    }
+
     //console.log(JSON.stringify(newRecord))
     //console.log('执行了update')
 

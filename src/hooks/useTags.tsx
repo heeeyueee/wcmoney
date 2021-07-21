@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createId } from 'common/createId';
 import { useUpdate } from './useUpdate';
 import { addTags, deleteTags, getTags } from 'services/tags';
-import { result } from 'lodash';
+
 
 const useTags = () => {
   const [tags, setTags] = useState<{ id: number, name: string, iconName: string, mold: string }[]>([])

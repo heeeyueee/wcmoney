@@ -42,7 +42,7 @@ const Money: React.FC = () => {
 
   const onSubmit = () => {
     addRecord(selected);
-    window.alert('保存成功');
+
     // window.location.reload();
 
   };

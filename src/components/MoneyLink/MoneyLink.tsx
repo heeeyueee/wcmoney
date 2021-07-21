@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import Money from 'views/Home/Money';
 import React from 'react';
-import Icon from 'components/Icon';
+
 
 const Wrapper = styled.div`
  margin: 5px auto 0;

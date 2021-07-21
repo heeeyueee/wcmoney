@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import TopNav from 'components/TopNav';
 import { Wrapper } from 'components/Wrapper';
@@ -9,7 +9,7 @@ import useTags from 'hooks/useTags';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { EditTag } from './EditTag';
 import { CategorySection } from '../section/CategorySection';
-import { connect } from 'react-redux';
+
 
 
 const TagsList = styled.section`
@@ -54,7 +54,7 @@ const AddTag = styled.section`
 
 const Edit: React.FC = (props: any) => {
   const { path, url } = useRouteMatch();
-  const { tags, setTags } = useTags();
+  const { tags } = useTags();
   const [category, setCategory] = useState<'-' | '+'>('-');
   const moldTags = tags.filter(tag => tag.mold === category)
 
