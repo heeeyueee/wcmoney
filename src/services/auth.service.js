@@ -31,10 +31,11 @@ const logout = () => {
 const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
-
-export default {
+const expobj = {
   register,
   login,
   logout,
   getCurrentUser,
-};
+}
+
+export default expobj;

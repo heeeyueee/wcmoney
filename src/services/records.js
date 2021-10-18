@@ -7,7 +7,7 @@ export function addRecords(record) {
     return axios.post(API_URL + "records", record)
 }
 export function getRecords(userId) {
-    console.log(userId);
+    // console.log(userId);
     return axios.get(API_URL + "records", {
         params: {
             userId: userId

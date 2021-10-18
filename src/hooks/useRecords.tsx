@@ -57,9 +57,13 @@ const useRecords = () => {
     if (flag !== false) {
       addRecords(record)
         .then(res => {
-          // console.log('res=>', res.data);
+          if (res.data) {
+            window.alert('保存成功');
+            window.location.reload();
+          }
+
         })
-      window.alert('保存成功');
+
 
     }
 
